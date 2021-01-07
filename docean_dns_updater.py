@@ -45,7 +45,7 @@ def main():
 
     args = parser.parse_args()
 
-    cmd = 'dig @resolver1.opendns.com ANY -4 myip.opendns.com +short'
+    cmd = 'dig +short myip.opendns.com @resolver1.opendns.com'
     stdout, stderr = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE).communicate()
 
     if stderr is not None:
